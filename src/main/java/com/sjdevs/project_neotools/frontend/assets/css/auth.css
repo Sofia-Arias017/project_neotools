@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #F6F1EB, #EFE6DC);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+  width: 900px;
+  max-width: 95%;
+  height: 460px;
+  display: flex;
+  background: #EFE3D3;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.8s ease;
+}
+
+.container.reverse {
+  flex-direction: row-reverse;
+}
+
+/* PANEL LATERAL */
+.panel {
+  width: 45%;
+  background: linear-gradient(135deg, #D8C4A8, #CBB08F);
+  color: #3E2F23;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.panel h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.panel p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.panel button {
+  margin-top: 20px;
+  background: transparent;
+  border: 2px solid #3E2F23;
+  color: #3E2F23;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.panel button:hover {
+  background: #3E2F23;
+  color: #fff;
+}
+
+/* FORMULARIO */
+.form-panel {
+  width: 55%;
+  padding: 50px 40px;
+  background: #FBF8F4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-panel h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #3E2F23;
+}
+
+.form-panel input,
+.form-panel select {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #D1C3AF;
+  background: #fff;
+  font-size: 14px;
+}
+
+.form-panel input:focus,
+.form-panel select:focus {
+  outline: none;
+  border-color: #B08968;
+}
+
+/* BOTON PRINCIPAL */
+.form-panel button {
+  margin-top: 10px;
+  padding: 12px;
+  background: #B08968;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-panel button:hover {
+  background: #9C6F44;
+  transform: translateY(-2px);
+}
+
+#error {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #B00020;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .panel,
+  .form-panel {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .panel h2 {
+    font-size: 26px;
+  }
+}
