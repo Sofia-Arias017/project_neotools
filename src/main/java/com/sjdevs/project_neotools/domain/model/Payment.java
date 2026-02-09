@@ -3,6 +3,7 @@ package com.sjdevs.project_neotools.domain.model;
 public class Payment {
     private Long id;
     private Long reservaId;
+    private String concepto;
     private java.math.BigDecimal monto;
     private java.time.LocalDateTime fechaPago;
     private String metodoPago;
@@ -11,13 +12,13 @@ public class Payment {
     public Payment() {
     }
 
-    public Payment(Long id, Long reservaId, java.math.BigDecimal monto, java.time.LocalDateTime fechaPago,
-            String metodoPago, Long estadoPagoId) {
+    public Payment(Long id, Long reservaId, String concepto, java.math.BigDecimal monto, 
+            java.time.LocalDateTime fechaPago, Long estadoPagoId) {
         this.id = id;
         this.reservaId = reservaId;
+        this.concepto = concepto;
         this.monto = monto;
         this.fechaPago = fechaPago;
-        this.metodoPago = metodoPago;
         this.estadoPagoId = estadoPagoId;
     }
 
@@ -35,6 +36,14 @@ public class Payment {
 
     public void setReservaId(Long reservaId) {
         this.reservaId = reservaId;
+    }
+
+    public String getConcepto() {
+        return concepto;
+    }
+
+    public void setConcepto(String concepto) {
+        this.concepto = concepto;
     }
 
     public java.math.BigDecimal getMonto() {

@@ -1,0 +1,50 @@
+{
+  "info": {
+    "name": "Neotools API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"1234\"\n}" },
+        "url": { "raw": "http://localhost:8081/api/auth/login", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["api","auth","login"] }
+      }
+    },
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"username\": \"newuser\",\n  \"email\": \"new@example.com\",\n  \"password\": \"1234\"\n}" },
+        "url": { "raw": "http://localhost:8081/api/auth/register", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["api","auth","register"] }
+      }
+    },
+    {
+      "name": "Validate Session",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:8081/api/auth/validate", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["api","auth","validate"] }
+      }
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:8081/api/auth/logout", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["api","auth","logout"] }
+      }
+    },
+    {
+      "name": "Protected Resource",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:8081/api/protected", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["api","protected"] }
+      }
+    }
+  ]
+}

@@ -6,7 +6,6 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "reserva")
@@ -16,20 +15,26 @@ public class ReservationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "fecha_inicio")
-    private java.time.LocalDateTime fechaInicio;
-
-    @Column(name = "fecha_fin")
-    private java.time.LocalDateTime fechaFin;
-
     @Column(name = "cliente_id")
     private Long clienteId;
 
     @Column(name = "herramienta_id")
     private Long herramientaId;
 
+    @Column(name = "fecha_inicio")
+    private java.time.LocalDateTime fechaInicio;
+
+    @Column(name = "fecha_fin_estimada")
+    private java.time.LocalDateTime fechaFinEstimada;
+
+    @Column(name = "fecha_creacion")
+    private java.time.LocalDateTime fechaCreacion;
+
     @Column(name = "estado_reserva_id")
     private Long estadoReservaId;
+
+    @Column(name = "observaciones")
+    private String observaciones;
 
     public ReservationEntity() {
     }
@@ -40,22 +45,6 @@ public class ReservationEntity {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public java.time.LocalDateTime getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public void setFechaInicio(java.time.LocalDateTime fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    public java.time.LocalDateTime getFechaFin() {
-        return fechaFin;
-    }
-
-    public void setFechaFin(java.time.LocalDateTime fechaFin) {
-        this.fechaFin = fechaFin;
     }
 
     public Long getClienteId() {
@@ -74,11 +63,43 @@ public class ReservationEntity {
         this.herramientaId = herramientaId;
     }
 
+    public java.time.LocalDateTime getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(java.time.LocalDateTime fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public java.time.LocalDateTime getFechaFinEstimada() {
+        return fechaFinEstimada;
+    }
+
+    public void setFechaFinEstimada(java.time.LocalDateTime fechaFinEstimada) {
+        this.fechaFinEstimada = fechaFinEstimada;
+    }
+
+    public java.time.LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(java.time.LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
     public Long getEstadoReservaId() {
         return estadoReservaId;
     }
 
     public void setEstadoReservaId(Long estadoReservaId) {
         this.estadoReservaId = estadoReservaId;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
     }
 }

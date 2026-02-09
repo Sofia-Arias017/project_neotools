@@ -2,23 +2,27 @@ package com.sjdevs.project_neotools.domain.model;
 
 public class Reservation {
     private Long id;
-    private java.time.LocalDateTime fechaInicio;
-    private java.time.LocalDateTime fechaFin;
     private Long clienteId;
     private Long herramientaId;
+    private java.time.LocalDateTime fechaInicio;
+    private java.time.LocalDateTime fechaFinEstimada;
+    private java.time.LocalDateTime fechaCreacion;
     private Long estadoReservaId;
+    private String observaciones;
 
     public Reservation() {
     }
 
-    public Reservation(Long id, java.time.LocalDateTime fechaInicio, java.time.LocalDateTime fechaFin, Long clienteId,
-            Long herramientaId, Long estadoReservaId) {
+    public Reservation(Long id, Long clienteId, java.time.LocalDateTime fechaInicio, 
+            java.time.LocalDateTime fechaFinEstimada, java.time.LocalDateTime fechaCreacion, 
+            Long estadoReservaId, String observaciones) {
         this.id = id;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
         this.clienteId = clienteId;
-        this.herramientaId = herramientaId;
+        this.fechaInicio = fechaInicio;
+        this.fechaFinEstimada = fechaFinEstimada;
+        this.fechaCreacion = fechaCreacion;
         this.estadoReservaId = estadoReservaId;
+        this.observaciones = observaciones;
     }
 
     public Long getId() {
@@ -37,12 +41,20 @@ public class Reservation {
         this.fechaInicio = fechaInicio;
     }
 
-    public java.time.LocalDateTime getFechaFin() {
-        return fechaFin;
+    public java.time.LocalDateTime getFechaFinEstimada() {
+        return fechaFinEstimada;
     }
 
-    public void setFechaFin(java.time.LocalDateTime fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setFechaFinEstimada(java.time.LocalDateTime fechaFinEstimada) {
+        this.fechaFinEstimada = fechaFinEstimada;
+    }
+
+    public java.time.LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(java.time.LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 
     public Long getClienteId() {
@@ -59,6 +71,14 @@ public class Reservation {
 
     public void setHerramientaId(Long herramientaId) {
         this.herramientaId = herramientaId;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
     }
 
     public Long getEstadoReservaId() {
