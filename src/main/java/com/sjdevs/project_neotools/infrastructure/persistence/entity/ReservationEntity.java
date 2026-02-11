@@ -36,6 +36,9 @@ public class ReservationEntity {
     @Column(name = "observaciones")
     private String observaciones;
 
+    @Column(name = "estadoDevolucion")
+    private String estadoDevolucion;
+
     public ReservationEntity() {
     }
 
@@ -101,5 +104,13 @@ public class ReservationEntity {
 
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
+    }
+
+    public String getEstadoDevolucion() {
+        return estadoDevolucion;
+    }
+
+    public void setEstadoDevolucion(String estadoDevolucion) {
+        this.estadoDevolucion = estadoDevolucion;
     }
 }
